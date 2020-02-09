@@ -1,0 +1,57 @@
+body {
+  background-color: #1e90ff;
+}
+
+.navbar {
+  background-color: #00008b;
+  padding: 0;
+  border: 3px solid black;
+  margin-bottom: 5px;
+}
+#countDown {
+  background-color: black;
+  color: red;
+  width: 10%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 26px;
+  border: inset;
+  border-width: 2px;
+  border-color: gray;
+  font-family: "Orbitron", sans-serif;
+}
+
+.navbar-brand {
+  border-right: 3px solid black;
+  padding-right: 5px;
+  padding-left: 5px;
+  color: yellow;
+  font-family: "Luckiest Guy", cursive;
+  font-size: 24px;
+  padding-top: 10px;
+  text-align: center;
+}
+
+#highScores {
+  border-left: 3px solid black;
+  padding-right: 5px;
+  padding-left: 5px;
+  color: yellow;
+  font-family: "Luckiest Guy", cursive;
+  font-size: 24px;
+  padding-top: 10px;
+  text-align: center;
+}
+
+#startButton {
+  margin: auto;
+  width: 30%;
+  max-width: 200px;
+  border: 2px solid black;
+  padding: 10px;
+  background-color: tomato;
+  border-radius: 25px;
+  text-align: center;
+  font-size: 30px;
+}
