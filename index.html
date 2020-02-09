@@ -15,8 +15,11 @@
       rel="stylesheet"
     />
     <!--google font  font-family: 'Orbitron', sans-serif;-->
-    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
-
+    <link
+      href="https://fonts.googleapis.com/css?family=Orbitron"
+      rel="stylesheet"
+      type="text/css"
+    />
 
     <link rel="stylesheet" href="style.css" />
 
@@ -31,7 +34,38 @@
       <div id="highScores">High Scores</div>
     </nav>
     <!--start button-->
-    <p id="startButton">Start</div>
+    <div id="startButton">Start</div>
+    <!--question card-->
+    <div class="card" style="width: 18rem;" id="questionCard">
+      <div class="card-body">
+        <h5 class="card-title">Question Number</h5>
+        <p class="card-text">
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item" id="one">
+          <input type="radio" />
+          answer 1
+        </li>
+        <li class="list-group-item" id="two">
+          <input type="radio" />
+          answer 2
+        </li>
+        <li class="list-group-item" id="three">
+          <input type="radio" />
+          answer 3
+        </li>
+        <li class="list-group-item" id="four">
+          <input type="radio" />
+          answer 4
+        </li>
+      </ul>
+      <div class="card-body">
+        <div id="submit">Submit</div>
+      </div>
+    </div>
 
     <!--javascript tag-->
     <script src="script.js"></script>
