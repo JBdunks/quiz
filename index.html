@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comics Quiz</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -21,51 +22,31 @@
       type="text/css"
     />
 
-    <link rel="stylesheet" href="style.css" />
-
-    <title>Comics Quiz</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
-
   <body>
-    <!--navbar-->
+    <!--nav bar-->
     <nav class="navbar">
       <div class="navbar-brand">Comics Quiz</div>
       <div id="countDown"></div>
       <div id="highScores">High Scores</div>
     </nav>
-    <!--start button-->
+    <!---->
     <div id="startButton">Start</div>
-    <!--question card-->
-    <div class="card" style="width: 18rem;" id="questionCard">
-      <div class="card-body">
-        <h5 class="card-title">
-          Question Number : <span id="questNum"></span>
-        </h5>
-        <p class="card-text" id="questAsk"></p>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">
-          <div class="answerButton" id="one"></div>
-        </li>
-        <li class="list-group-item">
-          <div class="answerButton" id="two"></div>
-        </li>
-        <li class="list-group-item">
-          <div class="answerButton" id="three"></div>
-        </li>
-        <li class="list-group-item">
-          <div class="answerButton" id="four"></div>
-        </li>
-      </ul>
-      <div class="card-body">
-        <div id="submitButton">Submit</div>
+    <div class="card">
+      <div id="currentQuestion"></div>
+
+      <div id="questionBox">
+        <button id="buttonOne" class="answerButton">1</button>
+        <button id="buttonTwo" class="answerButton">2</button>
+        <button id="buttonThree" class="answerButton">3</button>
+        <button id="buttonFour" class="answerButton">4</button>
+
+        <div id="submitButton">submit</div>
+        <!--<div id="display"></div>-->
       </div>
     </div>
 
-    <!---score card-->
-    <div id="scoreCard"></div>
-
-    <!--javascript tag-->
     <script src="script.js"></script>
   </body>
 </html>

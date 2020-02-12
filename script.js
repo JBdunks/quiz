@@ -1,17 +1,25 @@
-/*timer
- */
-var secondsLeft = 60;
-countDown.textContent = secondsLeft;
-
+var input1 = document.getElementById("buttonOne");
+var input2 = document.getElementById("buttonTwo");
+var input3 = document.getElementById("buttonThree");
+var input4 = document.getElementById("buttonFour");
 var start = document.getElementById("startButton");
-var next = document.getElementById("submitButton");
-var x = 0;
+var submit = document.getElementById("submitButton");
+var displayEl = document.getElementById("display");
+var i = 0;
+var score = 0;
+var selected = 0;
 
-//Start Quiz
+function populate() {
+  document.getElementById("currentQuestion").textContent = questions[i].q;
+  document.getElementById("buttonOne").textContent = questions[i].a[0];
+  document.getElementById("buttonTwo").textContent = questions[i].a[1];
+  document.getElementById("buttonThree").textContent = questions[i].a[2];
+  document.getElementById("buttonFour").textContent = questions[i].a[3];
+}
+
 start.addEventListener("click", function() {
-  document.getElementById("startButton").style.visibility = "hidden";
-  document.getElementById("submitButton").style.visibility = "visible";
-
+  i = 0;
+  score = 0;
   var secondsLeft = 60;
   var timerInterval = setInterval(function() {
     secondsLeft--;
@@ -20,59 +28,96 @@ start.addEventListener("click", function() {
     if (secondsLeft === 0) {
       clearInterval(timerInterval);
       alert("Time has run out.  Game over");
+      return;
       document.getElementById("startButton").style.visibility = "visible";
     }
   }, 1000);
-  document.getElementById("questNum").innerHTML = "1";
-  document.getElementById("questAsk").innerHTML = myQuestions[0].question;
-  document.getElementById("one").innerHTML = myQuestions[0].answers;
-  document.getElementById("two").innerHTML = myQuestions[0].answers;
-  document.getElementById("three").innerHTML = myQuestions[0].answers;
-  document.getElementById("four").innerHTML = myQuestions[0].answers;
-  next.addEventListener("click", function() {
-    x++;
-    if (x == myQuestions.length) {
-      var finalScore = secondsLeft;
-      clearInterval(timerInterval);
-      document.getElementById("scoreCard").innerHTML = finalScore;
-    }
-    document.getElementById("questNum").innerHTML = x + 1;
-    document.getElementById("questAsk").innerHTML = myQuestions[x].question;
 
-    console.log(x);
+  populate();
+  input1.addEventListener("click", function() {
+    selected = 1;
   });
 
-  //original
+  input2.addEventListener("click", function() {
+    selected = 2;
+  });
+  input3.addEventListener("click", function() {
+    selected = 3;
+  });
+
+  input4.addEventListener("click", function() {
+    selected = 4;
+  });
+
+  submit.addEventListener("click", function() {
+    if (selected === questions[i].c) {
+      score++;
+      secondsLeft = secondsLeft + 3;
+      //displayEl.textContent = "Correct: " + score;
+    } else {
+      secondsLeft = secondsLeft - 3;
+      //displayEl.textContent = "Wrong: " + score;
+    }
+    i = i + 1;
+
+    if (i == 7) {
+      clearInterval(timerInterval);
+      var finalScore = secondsLeft * score;
+
+      var player = prompt(
+        "You have finished the quiz!  Please enter your name to record your high score.  " +
+          finalScore
+      );
+    }
+
+    populate();
+  });
 });
 
-/* questions
- */
-const myQuestions = [
+var questions = [
   {
-    question: "Who created Marvel Comics?",
-    answers: [
-      { a: "Steve Jobs", correct: false },
-      { b: "Jim Lee", correct: false },
-      { c: "Stan Lee", correct: true },
-      { d: "John Smith", correct: false }
-    ]
+    q: "Who created Marvel Comics.",
+    a: ["Jim Lee", "Stan Lee", "Donald Trump", "Steve Jobs"],
+    c: 2
   },
   {
-    question: "Who is the leader of Shield?",
-    answers: [
-      { a: "Captain America", correct: false },
-      { b: "Tony Stark", correct: false },
-      { c: "Hawk Eye", correct: false },
-      { d: "Nick Fury", correct: true }
-    ]
+    q: "Who is the leader of Shield?",
+    a: ["Captain America", "Nick Fury", "Tony Stark", "Black Widow"],
+    c: 2
   },
   {
-    question: "Where is Thor from?",
-    answers: [
-      { a: "the moon", correct: false },
-      { b: "Midgar", correct: false },
-      { c: "Valhalla", correct: false },
-      { d: "Asgard", correct: true }
-    ]
+    q: "Where is Thor From?",
+    a: ["the moon", "Midgar", "Asgard", "Valhalla"],
+    c: 3
+  },
+  {
+    q: "What is Spider-man's real identity?",
+    a: ["Bruce Banner", "Bruce Wayne", "Steve Rogers", "Peter Parker"],
+    c: 4
+  },
+  {
+    q: "Who founded the X-men?",
+    a: ["Magneto", "Jean Grey", "Charles Xavier", "William Task"],
+    c: 3
+  },
+  {
+    q: "What planet is Super-man from?",
+    a: ["Klingon", "Krypton", "Jupiter", "Earth"],
+    c: 2
+  },
+  {
+    q: "What is Green Arrow's real name?",
+    a: [
+      "Wilson Fisk",
+      "Rupert Murdoch",
+      "Oliver Jonas Queen",
+      "Billie Jean King"
+    ],
+    c: 3
+  },
+  {
+    q: " ",
+    a: [" ", " ", " ", " "],
+    c: 1
   }
 ];

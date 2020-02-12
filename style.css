@@ -79,6 +79,7 @@ body {
   margin: auto;
   border: 2px solid black;
   padding: 2px;
+  width: 100px;
   background-color: tomato;
   border-radius: 25px;
   text-align: center;
@@ -93,6 +94,7 @@ body {
 .answerButton {
   background-color: lightgray;
   text-align: center;
+  margin: 5px;
 }
 
 .answerButton:hover {
@@ -120,4 +122,18 @@ body {
   margin: auto;
   width: 40%;
   border: 2px solid red;
+}
+
+#currentQuestion {
+  color: yellow;
+  font-family: "Luckiest Guy", cursive;
+  font-size: 20px;
+  background-color: #00008b;
+  text-align: center;
+  padding-top: 6px;
+}
+
+#questionBox {
+  display: inline-grid;
+  background-color: blue;
 }
