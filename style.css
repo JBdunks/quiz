@@ -69,13 +69,13 @@ body {
 .card-title {
   color: yellow;
   font-family: "Luckiest Guy", cursive;
-  font-size: 24px;
+  font-size: 20px;
   background-color: #00008b;
   text-align: center;
   padding-top: 6px;
 }
 
-#submit {
+#submitButton {
   margin: auto;
   border: 2px solid black;
   padding: 2px;
@@ -83,7 +83,41 @@ body {
   border-radius: 25px;
   text-align: center;
   font-size: 18px;
+  display: hidden;
 }
-#submit:hover {
+#submitButton:hover {
   border: 2px solid#FFDEAD;
   color: #ffdead;
+}
+
+.answerButton {
+  background-color: lightgray;
+  text-align: center;
+}
+
+.answerButton:hover {
+  color: #ffdead;
+  background-color: #dc143c;
+}
+.answerButton:active {
+  color: #ffdead;
+  background-color: black;
+}
+
+#scoreCard {
+  margin: auto;
+  width: 30%;
+  color: magenta;
+}
+
+.card.correct {
+  margin: auto;
+  width: 40%;
+  border: 2px solid green;
+}
+
+.card.wrong {
+  margin: auto;
+  width: 40%;
+  border: 2px solid red;
+}

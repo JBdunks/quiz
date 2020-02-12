@@ -23,7 +23,7 @@
 
     <link rel="stylesheet" href="style.css" />
 
-    <title>Quiz Night!</title>
+    <title>Comics Quiz</title>
   </head>
 
   <body>
@@ -38,34 +38,32 @@
     <!--question card-->
     <div class="card" style="width: 18rem;" id="questionCard">
       <div class="card-body">
-        <h5 class="card-title">Question Number</h5>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
+        <h5 class="card-title">
+          Question Number : <span id="questNum"></span>
+        </h5>
+        <p class="card-text" id="questAsk"></p>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item" id="one">
-          <input type="radio" />
-          answer 1
+        <li class="list-group-item">
+          <div class="answerButton" id="one"></div>
         </li>
-        <li class="list-group-item" id="two">
-          <input type="radio" />
-          answer 2
+        <li class="list-group-item">
+          <div class="answerButton" id="two"></div>
         </li>
-        <li class="list-group-item" id="three">
-          <input type="radio" />
-          answer 3
+        <li class="list-group-item">
+          <div class="answerButton" id="three"></div>
         </li>
-        <li class="list-group-item" id="four">
-          <input type="radio" />
-          answer 4
+        <li class="list-group-item">
+          <div class="answerButton" id="four"></div>
         </li>
       </ul>
       <div class="card-body">
-        <div id="submit">Submit</div>
+        <div id="submitButton">Submit</div>
       </div>
     </div>
+
+    <!---score card-->
+    <div id="scoreCard"></div>
 
     <!--javascript tag-->
     <script src="script.js"></script>
